@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="allOrdersFormAnchorPane" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AllOrdersController">
+   <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#8e44ad" height="700.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="746.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="534.0" AnchorPane.topAnchor="0.0" />
+   <Label contentDisplay="CENTER" layoutX="14.0" layoutY="7.0" text="ALL ORDERS" textAlignment="CENTER" textFill="#95a5a6" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <font>
+         <Font name="System Bold" size="48.0" />
+      </font>
+   </Label>
+   <TableView fx:id="tblCart" layoutX="763.0" layoutY="196.0" prefHeight="350.0" prefWidth="500.0" AnchorPane.bottomAnchor="154.0" AnchorPane.leftAnchor="763.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="196.0">
+      <columns>
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Item Code" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Qty" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Total" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Discount(%)" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Net Total" />
+      </columns>
+   </TableView>
+   <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#34495e" height="50.0" layoutX="903.0" layoutY="553.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" AnchorPane.leftAnchor="903.0" AnchorPane.rightAnchor="77.0" />
+   <Label layoutX="977.0" layoutY="560.0" text="Total :" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="815.0" layoutY="102.0" text="ORDER ID :" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="815.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="102.0">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+   <Label layoutX="815.0" layoutY="155.0" prefHeight="30.0" prefWidth="157.0" text="CUSTOMER ID :" AnchorPane.bottomAnchor="515.0" AnchorPane.leftAnchor="815.0" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="155.0">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblOrderId" contentDisplay="CENTER" layoutX="1009.0" layoutY="104.0">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblCustomerId" layoutX="974.0" layoutY="155.0" prefHeight="30.0" prefWidth="157.0">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblTotal" contentDisplay="CENTER" layoutX="1051.0" layoutY="561.0" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
+   <TableView fx:id="tblAllOrders" layoutX="23.0" layoutY="170.0" prefHeight="499.0" prefWidth="700.0">
+     <columns>
+       <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="Order Id" />
+       <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="Customer Id" />
+         <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="Order Date" />
+         <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="Gross Amount" />
+         <TableColumn editable="false" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="Net Total" />
+         <TableColumn editable="false" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" sortable="false" text="View Details" />
+     </columns>
+   </TableView>
+   <TextField fx:id="txtSearchTable" layoutX="23.0" layoutY="124.0" prefHeight="35.0" prefWidth="440.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+   <Label layoutX="23.0" layoutY="103.0" text="search" textFill="WHITE" />
+</AnchorPane>

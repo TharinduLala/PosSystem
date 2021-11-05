@@ -1,0 +1,58 @@
+#mysql -h localhost -p 1234 -u root
+DROP DATABASE IF EXISTS POS_System;
+CREATE DATABASE IF NOT EXISTS POS_System;
+SHOW DATABASES ;
+USE POS_System;
+#-------------------
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer(
+    customerId VARCHAR(15),
+    customerName VARCHAR(30) NOT NULL DEFAULT 'Unknown',
+    customerTitle VARCHAR(15),
+    customerAddress VARCHAR(30),
+    city VARCHAR(20),
+    province VARCHAR(20),
+    postalCode VARCHAR(9),
+    CONSTRAINT PRIMARY KEY (customerId)
+    );
+SHOW TABLES ;
+DESCRIBE Customer;
+#---------------------
+DROP TABLE IF EXISTS `Order`;
+CREATE TABLE IF NOT EXISTS `Order`(
+    orderId VARCHAR(15),
+    customerId VARCHAR(15),
+    orderDate DATE,
+    grossAmount decimal(10,2),
+    netTotal decimal(10,2),
+    CONSTRAINT PRIMARY KEY (OrderId),
+    CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId) ON DELETE SET NULL ON UPDATE CASCADE
+    );
+SHOW TABLES ;
+DESCRIBE `Order`;
+#-----------------------
+DROP TABLE IF EXISTS Item;
+CREATE TABLE IF NOT EXISTS Item(
+    itemCode VARCHAR(15),
+    description VARCHAR(50),
+    packSize VARCHAR(20),
+    qtyOnHand INT DEFAULT 0,
+    unitPrice decimal(10,2),
+    CONSTRAINT PRIMARY KEY (itemCode)
+    );
+SHOW TABLES ;
+DESCRIBE Item;
+#------------------------
+DROP TABLE IF EXISTS `Order Detail`;
+CREATE TABLE IF NOT EXISTS `Order Detail`(
+    orderId VARCHAR(15),
+    itemCode VARCHAR(15),
+    orderedQty INT,
+    unitPrice decimal(10,2),
+    `discount(%)` decimal(10,2),
+    CONSTRAINT PRIMARY KEY (ItemCode, OrderId),
+    CONSTRAINT FOREIGN KEY (ItemCode) REFERENCES Item(ItemCode) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (OrderId) REFERENCES `Order`(OrderId) ON DELETE CASCADE ON UPDATE CASCADE
+    );
+SHOW TABLES ;
+DESCRIBE `Order Detail`;

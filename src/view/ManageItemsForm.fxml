@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="manageItemsAnchorPane" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageItemsController">
+   <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#8e44ad" height="700.0" layoutX="10.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="680.0" AnchorPane.topAnchor="0.0" />
+   <Label layoutX="1182.0" layoutY="14.0" text="All Items" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+   <Label layoutX="75.0" layoutY="293.0" text="Pack Size" textFill="WHITE" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="293.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label layoutX="75.0" layoutY="363.0" text="Unit Price" textFill="WHITE" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="363.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label layoutX="75.0" layoutY="223.0" text="Description" textFill="WHITE" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="223.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <JFXButton fx:id="btnRemove" buttonType="RAISED" layoutX="45.0" layoutY="594.0" onMouseClicked="#btnRemove_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 10;" text="Remove" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="45.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </JFXButton>
+   <Label layoutX="75.0" layoutY="433.0" text="Qty On Hand" textFill="WHITE" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="433.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="225.0" layoutY="594.0" onMouseClicked="#btnUpdate_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #2c3e50; -fx-background-radius: 10;" text="Update" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="225.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </JFXButton>
+   <TableView fx:id="tblItems" layoutX="626.0" layoutY="100.0" prefHeight="600.0" prefWidth="640.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0">
+      <columns>
+         <TableColumn editable="false" minWidth="120.0" prefWidth="120.0" sortable="false" text="Item Code" />
+         <TableColumn editable="false" minWidth="220.0" prefWidth="220.0" sortable="false" text="Description" />
+         <TableColumn editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="Pack Size" />
+         <TableColumn editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="Unit Price" />
+         <TableColumn editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="Qty On Hand" />
+      </columns>
+   </TableView>
+   <TextField fx:id="txtSearchTable" layoutX="630.0" layoutY="47.0" prefHeight="35.0" prefWidth="440.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+   <Label contentDisplay="CENTER" layoutX="229.0" layoutY="45.0" text="MANAGE ITEMS" textAlignment="CENTER" textFill="#95a5a6" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <font>
+         <Font name="System Bold" size="48.0" />
+      </font>
+   </Label>
+   <Label layoutX="630.0" layoutY="26.0" text="search" />
+   <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="405.0" layoutY="594.0" onMouseClicked="#btnAdd_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-background-radius: 10;" text="Add" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="405.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </JFXButton>
+   <TextField fx:id="txtItemCode" layoutX="250.0" layoutY="153.0" onKeyReleased="#textFields" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="730.0" AnchorPane.topAnchor="153.0" />
+   <TextField fx:id="txtDescription" layoutX="250.0" layoutY="223.0" onKeyReleased="#textFields" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="730.0" AnchorPane.topAnchor="223.0" />
+   <TextField fx:id="txtPackSize" layoutX="250.0" layoutY="293.0" onKeyReleased="#textFields" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="293.0" />
+   <TextField fx:id="txtUnitPrice" layoutX="250.0" layoutY="363.0" onKeyReleased="#textFields" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="363.0" />
+   <TextField fx:id="txtQtyOnHand" layoutX="250.0" layoutY="433.0" onKeyReleased="#textFields" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="433.0" />
+   <Label layoutX="75.0" layoutY="153.0" text="Item Code" textFill="WHITE" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="153.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="450.0" layoutY="485.0" onMouseClicked="#btnClear_Action" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #e67e22; -fx-background-radius: 10;" text="clear" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="730.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </JFXButton>
+</AnchorPane>

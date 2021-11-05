@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="newOrderFormAnchorPane" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewOrderController">
+   <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="835.0" layoutY="83.0" onMouseClicked="#btnSearch_Action" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: #3498db; -fx-background-radius: 10;" text="Search" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="582.0" AnchorPane.leftAnchor="835.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="83.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </JFXButton>
+   <JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="640.0" layoutY="624.0" onMouseClicked="#btnCancel_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;" text="Cancel" textAlignment="CENTER" textFill="#e74c3c" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="640.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="620.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <graphic>
+         <FontAwesomeIconView fill="#e74c3c" glyphName="REMOVE" size="20" />
+      </graphic>
+   </JFXButton>
+   <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#8e44ad" height="700.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="680.0" AnchorPane.topAnchor="0.0" />
+   <JFXButton fx:id="btnProceed" buttonType="RAISED" layoutX="400.0" layoutY="624.0" onMouseClicked="#btnProceed_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #1f8c4d; -fx-background-radius: 10;" text="Proceed" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="CHECK_SQUARE_ALT" size="20" />
+      </graphic>
+   </JFXButton>
+   <JFXButton fx:id="btnClearRow" buttonType="RAISED" layoutX="50.0" layoutY="624.0" onMouseClicked="#btnClearRow_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;" text="Clear Row" textAlignment="CENTER" textFill="#e74c3c">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <graphic>
+         <FontAwesomeIconView fill="#e74c3c" glyphName="TRASH_ALT" size="20" />
+      </graphic>
+   </JFXButton>
+   <Label contentDisplay="CENTER" layoutX="14.0" layoutY="7.0" text="NEW ORDER" textAlignment="CENTER" textFill="#95a5a6" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <font>
+         <Font name="System Bold" size="48.0" />
+      </font>
+   </Label>
+   <TableView fx:id="tblCart" layoutX="45.0" layoutY="180.0" prefHeight="350.0" prefWidth="500.0" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="735.0" AnchorPane.topAnchor="180.0">
+      <columns>
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Item Code" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Qty" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Total" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Discount(%)" />
+         <TableColumn editable="false" prefWidth="100.0" sortable="false" text="Net Total" />
+      </columns>
+   </TableView>
+   <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="1116.0" layoutY="624.0" onMouseClicked="#btnAddToCart_Action" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #1abc9c; -fx-background-radius: 10;" text="Add To Cart" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="1115.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="620.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="CART_ARROW_DOWN" size="20" />
+      </graphic>
+   </JFXButton>
+   <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#34495e" height="50.0" layoutX="150.0" layoutY="539.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="830.0" />
+   <Label layoutX="224.0" layoutY="546.0" text="Total :" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="125.0" layoutY="91.0" text="ORDER ID :" textFill="WHITE" AnchorPane.bottomAnchor="555.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="967.0" AnchorPane.topAnchor="92.0">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@assests/images/cart.png" />
+   </ImageView>
+   <Label layoutX="125.0" layoutY="146.0" prefHeight="30.0" prefWidth="157.0" text="CUSTOMER ID :" textFill="WHITE" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="998.0" AnchorPane.topAnchor="145.0">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <ComboBox fx:id="cmbItemCodes" layoutX="630.0" layoutY="338.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="630.0" AnchorPane.topAnchor="338.0" />
+   <TextField fx:id="txtCustomerName" editable="false" layoutX="630.0" layoutY="178.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="487.0" AnchorPane.leftAnchor="630.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="178.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <TextField fx:id="txtCustomerTitle" editable="false" layoutX="908.0" layoutY="178.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="487.0" AnchorPane.leftAnchor="908.0" AnchorPane.rightAnchor="122.0" AnchorPane.topAnchor="178.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <Separator layoutX="610.0" layoutY="224.0" prefHeight="3.0" prefWidth="660.0" AnchorPane.leftAnchor="610.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="224.0" />
+   <Label layoutX="630.0" layoutY="158.0" text="Customer Name" AnchorPane.bottomAnchor="521.0" AnchorPane.leftAnchor="630.0" AnchorPane.rightAnchor="542.0" AnchorPane.topAnchor="158.0" />
+   <Label layoutX="908.0" layoutY="158.0" text="Title" AnchorPane.bottomAnchor="521.0" AnchorPane.leftAnchor="908.0" AnchorPane.rightAnchor="343.0" AnchorPane.topAnchor="158.0" />
+   <TextField fx:id="txtCustomerId" layoutX="630.0" layoutY="83.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="582.0" AnchorPane.leftAnchor="630.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="83.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <Label layoutX="631.0" layoutY="60.0" text="Customer Id" AnchorPane.bottomAnchor="619.0" AnchorPane.leftAnchor="631.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="60.0" />
+   <TextField fx:id="txtDescription" editable="false" layoutX="630.0" layoutY="418.0" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="630.0" AnchorPane.topAnchor="418.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <TextField fx:id="txtPackSize" editable="false" layoutX="889.0" layoutY="418.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.topAnchor="418.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <Label layoutX="628.0" layoutY="317.0" text="Item Codes" />
+   <Label layoutX="631.0" layoutY="397.0" text="Description" />
+   <TextField fx:id="txtUnitPrice" editable="false" layoutX="1080.0" layoutY="418.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="418.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <TextField fx:id="txtQtyOnHand" editable="false" layoutX="630.0" layoutY="498.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="630.0" AnchorPane.topAnchor="498.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <TextField fx:id="txtDiscount" layoutX="847.0" layoutY="498.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.leftAnchor="847.0" AnchorPane.topAnchor="498.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <TextField fx:id="txtPurchaseQty" layoutX="1060.0" layoutY="498.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="498.0">
+      <cursor>
+         <Cursor fx:constant="TEXT" />
+      </cursor>
+   </TextField>
+   <Label layoutX="889.0" layoutY="397.0" text="Pack Size" />
+   <Label layoutX="1080.0" layoutY="397.0" text="Unit Price" />
+   <Label layoutX="631.0" layoutY="477.0" text="Qty On Hand" />
+   <Label layoutX="847.0" layoutY="477.0" text="Discount" />
+   <Label layoutX="1060.0" layoutY="477.0" text="Purchase Qty." />
+   <Label layoutX="630.0" layoutY="14.0" text="Customer" AnchorPane.leftAnchor="630.0" AnchorPane.topAnchor="10.0">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="621.0" layoutY="235.0" text="Items" AnchorPane.leftAnchor="630.0">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblOrderId" contentDisplay="CENTER" layoutX="319.0" layoutY="94.0" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblCustomerId" layoutX="284.0" layoutY="145.0" prefHeight="30.0" prefWidth="157.0" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblTotal" contentDisplay="CENTER" layoutX="298.0" layoutY="547.0" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="24.0" />
+      </font>
+   </Label>
+   <JFXButton fx:id="btnNewCustomer" buttonType="RAISED" layoutX="1044.0" layoutY="25.0" onMouseClicked="#btnNewCustomer_Action" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #2c3e50; -fx-background-radius: 10;" text="Add New Customer" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+      </graphic>
+   </JFXButton>
+</AnchorPane>
